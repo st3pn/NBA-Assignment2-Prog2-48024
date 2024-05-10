@@ -18,7 +18,7 @@
     
     <ImageView>
         <image>
-            <Image url="@NBA_BACK.jpg"/>
+            <Image url="@NBA_Back.jpg"/>
         </image>
     </ImageView>
 

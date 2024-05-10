@@ -6,15 +6,18 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import model.*;
 
 public class ExploreTeamsController extends Controller<Teams> {
     
+    @FXML private ImageView imageView;
     @FXML
     private Button teamsMenuButton;
     @FXML
@@ -25,6 +28,13 @@ public class ExploreTeamsController extends Controller<Teams> {
     private GridPane buttonGrid;
 
     public final Teams getTeamsController() { return this.model;}
+
+   @FXML private void initialize() {
+         URL url = getClass().getResource("/view/NBA_Back.jpg");
+         Image image = new Image(url.toString());
+         imageView.setImage(image);
+         System.out.println(url.toString());
+   }
 
     @FXML 
     private void openTeamsMenu() {

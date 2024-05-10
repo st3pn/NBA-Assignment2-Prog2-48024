@@ -88,6 +88,7 @@ public class PlayerUpdateController extends Controller<Player> {
             Stage stage = new Stage();
             stage.getIcons().add(new Image("/view/error.png"));
             ViewLoader.showStage(new InputException(getErrorMessages()), "/view/error.fxml", "Input Exceptions", stage);
+
         }
     }
 

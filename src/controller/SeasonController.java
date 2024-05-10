@@ -7,18 +7,29 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import model.*;
 
 public class SeasonController extends Controller<Season>  {
 
+   @FXML private ImageView imageView;
+
     public final Season getSeason() { return model; }
 
+   @FXML private void initialize() {
+         URL url = getClass().getResource("/view/NBA_Back.jpg");
+         Image image = new Image(url.toString());
+         imageView.setImage(image);
+         System.out.println(url.toString());
+   }
+   
     @FXML private void close() { stage.close();}
 
     @FXML

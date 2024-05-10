@@ -31,6 +31,7 @@ public class TeamsRoundController extends Controller<Season> {
 
         roundHeader.setText("Round: " + (getSeason().round() + 1));
         arrangeButton.setDisable(true);
+        addButton.setDisable(true);
 
         Label placeholder = new Label("All teams added to round");
         teamsLv.setPlaceholder(placeholder);

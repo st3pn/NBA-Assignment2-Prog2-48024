@@ -17,11 +17,7 @@
        xmlns:fx="http://javafx.com/fxml/1"
        >
 
-    <ImageView>
-        <image>
-            <Image url="@NBA_BACK.jpg"/>
-        </image>
-    </ImageView>
+    <ImageView fx:id="imageView"/>
 
     <GridPane fx:id="buttonGrid" alignment="CENTER">
         <Button fx:id="teamsMenuButton" text="Teams Menu" onAction="#openTeamsMenu"

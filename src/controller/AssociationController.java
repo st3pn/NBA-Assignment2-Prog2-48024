@@ -9,12 +9,14 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.stage.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import model.*;
 
-public class AssociationController extends Controller<Association> {
 
+public class AssociationController extends Controller<Association> {
+    
     @FXML
     private Button exploreTeamsButton;
 
@@ -31,6 +33,7 @@ public class AssociationController extends Controller<Association> {
         return model;
     }
     
+
     @FXML
     public void exploreTeams() {
         try {
