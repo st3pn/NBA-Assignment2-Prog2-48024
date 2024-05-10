@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>  
+
+<VBox fx:controller="controller.ManageTeamController" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1"  styleClass="background">
+    
+    <HBox alignment="CENTER" styleClass="header">
+        <Label styleClass="label-opac" text="Team Name:"/>
+        <TextField fx:id="nameTF"/>
+    </HBox>
+    
+    <HBox alignment="CENTER" styleClass="header">
+    
+    <TableView fx:id="playersTv">
+        <placeholder>
+            <Label text="Players list is not loaded"/>
+        </placeholder>
+
+        <columns>
+            <TableColumn minWidth="200" text="Player Name">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="200" text="Player Credit">
+                <cellValueFactory><PropertyValueFactory property="credit"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="200" text="Player Age">
+                <cellValueFactory><PropertyValueFactory property="age"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="200" text="Player No">
+                <cellValueFactory><PropertyValueFactory property="no"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    </HBox>
+
+    <HBox alignment="CENTER">
+        <Button fx:id="addPlayerButton" onAction="#handleAddPlayer" text="Add"/>
+        <Button fx:id="updatePlayerButton" onAction="#handleUpdatePlayer" text="Update"/>
+        <Button fx:id="deletePlayerButton" onAction="#handleDeletePlayer" text="Delete"/>
+        <Button fx:id="closeButton" onAction="#close" text="Save and Close"/>
+    </HBox>
+
+
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    
+</VBox>
+

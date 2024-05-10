@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:controller="controller.TeamsController" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1"  styleClass="background"  
+prefHeight="420.0" prefWidth="1000" spacing="20">
+    
+    <HBox alignment="CENTER" styleClass="header">
+        <Label text="All Teams" styleClass="label-h2" />
+    </HBox>
+
+    <HBox alignment="CENTER" styleClass="header">
+    <TableView fx:id="teamsTv">
+        <columns>
+            <TableColumn minWidth="200" text="Team Name">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="200" fx:id="numPlayersColumn" text="Number of Players"/>
+            <TableColumn minWidth="200" fx:id="avgPlayerCreditColumn" text="Average Player Credit"/>
+            <TableColumn minWidth="200" fx:id="avgAgeColumn" text="Average Age"/>
+        </columns>
+    </TableView>
+    </HBox>
+    <HBox alignment="CENTER">
+        <Button fx:id="addButton" onAction="#handleAddTeam" text="Add"/>
+        <Button fx:id="manageButton" onAction="#manageTeam" text="Manage"/>
+        <Button fx:id="deleteButton" onAction="#deleteTeam" text="Delete"/>
+        <Button fx:id="closeButton" onAction="#close" text="Close"/>
+    </HBox>
+    
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    
+</VBox>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>  
+
+<VBox fx:controller="controller.ViewPlayersController" xmlns:fx="http://javafx.com/fxml/1" styleClass="background" alignment="CENTER" >
+    <Label text="All Players" alignment="CENTER" styleClass="label-header"/>
+
+    <HBox alignment="CENTER" styleClass="header">
+        <TableView fx:id="allPlayersTv">
+
+        <placeholder>
+            <Label text="Players list is not loaded"/>
+        </placeholder>
+
+            <columns>
+                <TableColumn minWidth="150" text="Team">
+                    <cellValueFactory><PropertyValueFactory property="teamName"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="150" text="Player Name">
+                    <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="150" text="Player credit">
+                    <cellValueFactory><PropertyValueFactory property="credit"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="150" text="Player Age">
+                    <cellValueFactory><PropertyValueFactory property="age"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="150" text="Player No">
+                    <cellValueFactory><PropertyValueFactory property="no"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="150" text="Player Level">
+                    <cellValueFactory><PropertyValueFactory property="level"/></cellValueFactory>
+                </TableColumn>             
+            </columns>
+        </TableView>
+    </HBox>
+    <Separator/>
+    
+    <Label text="Filter" styleClass="label-header" alignment="CENTER"/>
+    <HBox alignment="CENTER" spacing="10">
+        <Label styleClass="label-opac" text="Filter By Level:"/> 
+        <TextField fx:id="levelFilterTf"/>
+        <Label styleClass="label-opac" text="Filter By Name:"/>
+        <TextField fx:id="nameFilterTf"/>
+    </HBox>
+    <Label text="Filter By Age:" alignment="CENTER" styleClass="label-opac"/>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label styleClass="label-opac" text="From:"/>
+        <TextField fx:id="ageFromTf" text="0"/>
+        <Label styleClass="label-opac" text="To:"/>
+        <TextField fx:id="ageToTf" text="0"/>
+    </HBox> 
+
+    <HBox alignment="CENTER">
+        <Button text="Close" onAction="#close"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    
+</VBox>

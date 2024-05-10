@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox fx:controller="controller.AssociationController" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1"
+      >
+    
+    <ImageView>
+        <image>
+            <Image url="@NBA_BACK.jpg"/>
+        </image>
+    </ImageView>
+
+    <GridPane fx:id="buttonGrid" alignment="CENTER">
+        <Button fx:id="exploreTeamsButton" onAction="#exploreTeams" text="Explore the teams" 
+            GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Button fx:id="newSeasonButton" onAction="#newSeason" text="Arrange a new season" 
+            GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Button fx:id="exitButton" onAction="#exit" text="Exit" 
+            GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    </GridPane>
+   
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+</VBox>
