@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.*;
 import javafx.fxml.*;
@@ -25,6 +26,12 @@ public class ViewPlayersController extends Controller<Teams> {
     @FXML private TextField ageToTf;
     @FXML private TableView<Player> allPlayersTv;
 
+    private ObservableList<Player> playersToDisplay;
+
+    public ViewPlayersController() {
+        playersToDisplay = FXCollections.<Player>observableArrayList();
+    }
+
     public final Teams getTeams() { return model; }
 
     private String getName() {
@@ -44,13 +51,23 @@ public class ViewPlayersController extends Controller<Teams> {
     }
 
     @FXML private void initialize() {
-        allPlayersTv.setItems(getTeams().allPlayersList());
-
+        setPlayers();
+        allPlayersTv.setItems(playersToDisplay);
+        
+        nameFilterTf.textProperty().addListener(Event -> setPlayers());
+        levelFilterTf.textProperty().addListener(Event -> setPlayers());
+        ageFromTf.textProperty().addListener(Event -> setPlayers());
+        ageToTf.textProperty().addListener(Event -> setPlayers());
     }
 
+    private void setPlayers() {
+        playersToDisplay.clear();
+        for (Team team : getTeams().currentTeams()) {
+            team.filterList(getName(), getLevel(), getAgeFrom(), getAgeTo());
+            playersToDisplay.addAll(team.getPlayers().getFilteredPlayersList());
+        }
+    }
+    
     @FXML private void close() { stage.close();}
-
-
-
 }
 

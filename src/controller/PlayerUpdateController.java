@@ -14,6 +14,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import model.*;
+import javafx.util.Duration;
+import java.util.*;
 
 public class PlayerUpdateController extends Controller<Player> {
    

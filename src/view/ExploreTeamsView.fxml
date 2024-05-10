@@ -31,11 +31,6 @@
         <Button fx:id="closeButton" text="Close" onAction="#close" 
             GridPane.rowIndex="1" GridPane.columnIndex="1"/>
     </GridPane>
-
-
-
-    
-
     
     <stylesheets>
         <URL value="@style.css"/>

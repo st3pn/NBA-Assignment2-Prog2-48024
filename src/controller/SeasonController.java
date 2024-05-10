@@ -37,7 +37,23 @@ public class SeasonController extends Controller<Season>  {
 
    @FXML 
    private void handleGame(ActionEvent event) throws Exception {
+      boolean hasGames = !getSeason().getCurrentSchedule().isEmpty();
+      if (hasGames) {
+         Stage stage = new Stage();
+         stage.getIcons().add(new Image("/view/nba.png"));
+         ViewLoader.showStage(new InputException(getSeason().playGame()), "/view/error.fxml", "All Games Played!", stage);
+      } else {
+         Stage stage = new Stage();
+         stage.getIcons().add(new Image("/view/nba.png"));         
+         ViewLoader.showStage(new InputException("No Games to play!\nPlease add game to this round"), "/view/error.fxml", "All Games Played!", stage);
+      }
+   }
 
+   @FXML 
+   private void viewResult(ActionEvent event) throws Exception {
+      Stage stage = new Stage();
+      stage.getIcons().add(new Image("/view/nba.png"));
+      ViewLoader.showStage(getSeason(), "/view/RecordView.fxml", "Season Rounds", stage);
    }
 }
 

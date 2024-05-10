@@ -14,7 +14,7 @@ import javafx.scene.layout.*;
 import model.*;
 
 public class ExploreTeamsController extends Controller<Teams> {
-        
+    
     @FXML
     private Button teamsMenuButton;
     @FXML

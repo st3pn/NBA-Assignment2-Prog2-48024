@@ -66,7 +66,7 @@ public class TeamsController extends Controller<Teams> {
 
     @FXML 
     private void deleteTeam() {
-        model.remove(teamsTv.getSelectionModel().getSelectedItem());
+        model.remove(getSelectedTeam());
     }
     
 

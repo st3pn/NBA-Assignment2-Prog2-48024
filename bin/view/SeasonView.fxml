@@ -23,12 +23,10 @@
         <Button text="Round" onAction="#viewSeasonRound"/>
         <Button text="Current" onAction="#viewCurrentRoundTeams"/>
         <Button text="Game" onAction="#handleGame" />
-        <Button text="Result"/>
+        <Button text="Result" onAction="#viewResult"/>
         <Button text="Close" onAction="#close"/>
     </VBox>
 
-    
-        
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
