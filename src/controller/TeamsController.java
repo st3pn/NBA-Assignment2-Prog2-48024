@@ -1,10 +1,13 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Action;
@@ -44,6 +47,16 @@ public class TeamsController extends Controller<Teams> {
         teamsTv.getSelectionModel().selectedItemProperty().addListener((observable, oldTeam, newTeam) -> addButton.setDisable(newTeam != null));
         teamsTv.getSelectionModel().selectedItemProperty().addListener((observable, oldTeam, newTeam) -> manageButton.setDisable(newTeam == null));
         teamsTv.getSelectionModel().selectedItemProperty().addListener((observable, oldTeam, newTeam) -> deleteButton.setDisable(newTeam == null));
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            Platform.runLater(() -> {
+                    teamsTv.refresh();
+                });
+            }
+        }, 0, 200);
     }
 
     private Team getSelectedTeam() {

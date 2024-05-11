@@ -77,9 +77,10 @@ public class ManageTeamController extends Controller<Team> {
     @FXML
     private void handleAddPlayer(ActionEvent event) throws Exception {
         Player newPlayer = new Player("", -1.0, -1, -1);
+        newPlayer.setTeam(getTeam());
         Stage stage = new Stage();
         stage.getIcons().add(new Image("view/nba.png"));
-        model.getPlayers().addPlayer(newPlayer);
+        getTeam().getPlayers().addPlayer(newPlayer);
         playersTv.setItems(getTeam().getCurrentPlayers());
         ViewLoader.showStage(newPlayer, "/view/PlayerUpdateView.fxml", "Adding New Player", stage);
     }
