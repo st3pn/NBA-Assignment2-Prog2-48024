@@ -80,7 +80,6 @@ public class ManageTeamController extends Controller<Team> {
         newPlayer.setTeam(getTeam());
         Stage stage = new Stage();
         stage.getIcons().add(new Image("view/nba.png"));
-        getTeam().getPlayers().addPlayer(newPlayer);
         playersTv.setItems(getTeam().getCurrentPlayers());
         ViewLoader.showStage(newPlayer, "/view/PlayerUpdateView.fxml", "Adding New Player", stage);
     }

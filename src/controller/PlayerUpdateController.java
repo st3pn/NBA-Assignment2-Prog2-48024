@@ -82,6 +82,7 @@ public class PlayerUpdateController extends Controller<Player> {
         boolean valid = validator.isValid(getName(), getCredit(), getAge(), getNo());
         if (valid) {
             getPlayer().update(getName(), Double.parseDouble(getCredit()), Integer.valueOf(getAge()), Integer.valueOf(getNo()));
+            getPlayer().getTeam().getPlayers().addPlayer(getPlayer());
             stage.close();
             System.out.println(getPlayer().getCredit());
         } else {
