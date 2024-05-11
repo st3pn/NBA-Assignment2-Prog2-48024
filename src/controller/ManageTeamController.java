@@ -18,7 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import model.*;
 
-
+//testing
 public class ManageTeamController extends Controller<Team> {
 
     private Validator validator = new Validator();
