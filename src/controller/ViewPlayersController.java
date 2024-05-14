@@ -42,12 +42,20 @@ public class ViewPlayersController extends Controller<Teams> {
         return levelFilterTf.getText();
     }
 
-    private int getAgeFrom() {
-        return Integer.valueOf(ageFromTf.getText());
+    private Integer getAgeFrom() {
+        if (ageFromTf.getText().isEmpty()) {
+            return 0;
+        } else {
+            return Integer.parseInt(ageFromTf.getText());
+        }
     }
 
-    private int getAgeTo() {
-        return Integer.valueOf(ageToTf.getText());
+    private Integer getAgeTo() {
+        if (ageToTf.getText().isEmpty()) {
+            return 0;
+        } else {
+            return Integer.parseInt(ageToTf.getText());
+        }
     }
 
     @FXML private void initialize() {
